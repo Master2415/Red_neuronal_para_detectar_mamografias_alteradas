@@ -1,0 +1,101 @@
+# ==============================================================================
+# SEGURIDAD Y PRIVACIDAD CLÍNICA - HABEAS DATA (LEY 1581) / HIPAA
+# ==============================================================================
+# 1. Módulos Privados de Ingesta Hospitalaria y PACS (Repositorio Interno)
+private_ingestion/
+src/data/downloader.py
+scripts/download.py
+scripts/ejecutar_descarga_masiva.bat
+legacy/descargar_mamografias.py
+*downloader*
+*descarga_masiva*
+
+# 2. Imágenes médicas en cualquier formato
+*.jpg
+*.jpeg
+*.png
+*.dcm
+*.dicom
+*.tif
+*.tiff
+dataset_preprocesado/
+imagenes/
+data/
+raw/
+D:/*
+
+# Excepción: Permitir figuras estadísticas de gráficas generadas (sin datos de pacientes)
+!graficas/*.png
+
+# 2. Metadatos clínicos y manifiestos con cédulas/identificaciones de pacientes
+*manifest*.csv
+*.csv
+*metadata*.json
+pacientes*.json
+*.xlsx
+*.xls
+
+# 3. Credenciales y Archivos Secretos de Configuración
+.env
+config_local.py
+*.key
+*.pem
+*.token
+
+# 4. Modelos Pesados y Pesos de Redes Neuronales
+*.pth
+*.pt
+*.bin
+*.onnx
+*.safetensors
+*.ckpt
+
+# Excepción: Incluir el modelo entrenado oficial (6.5 MB, compatible con límite de GitHub)
+!models/mejor_modelo_mammocnn.pth
+
+# ==============================================================================
+# PYTHON, COMPILACIÓN Y SISTEMA OPERATIVO
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Entornos Virtuales
+.venv/
+venv/
+ENV/
+env/
+
+# IDEs, Editores y Caches
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs y Archivos Temporales
+*.log
+scratch/
+.system_generated/
+contexto/
+resumen_*.txt
+
